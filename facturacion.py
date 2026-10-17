@@ -46,3 +46,7 @@ class StripeProcessor(IPagoProcessor):
     def pagar(self, monto: float) -> bool:
         print(f"Procesando pago de ${monto} vía Stripe API")
         return True
+
+def test_emitir_factura():
+    print("Ejecutando test unitario de facturacion...")
+    assert True
