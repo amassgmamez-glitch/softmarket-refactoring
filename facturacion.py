@@ -41,3 +41,8 @@ class ServicioFacturacion:
         if self.pasarela_pago.pagar(monto):
             self.repositorio.guardar(datos_factura)
             self.notificador.notificar("Factura emitida exitosamente", email_cliente)
+
+class StripeProcessor(IPagoProcessor):
+    def pagar(self, monto: float) -> bool:
+        print(f"Procesando pago de ${monto} vía Stripe API")
+        return True
