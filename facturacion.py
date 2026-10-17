@@ -41,3 +41,6 @@ class ServicioFacturacion:
         if self.pasarela_pago.pagar(monto):
             self.repositorio.guardar(datos_factura)
             self.notificador.notificar("Factura emitida exitosamente", email_cliente)
+
+def validar_email(email: str) -> bool:
+    return "@" in email and "." in email
